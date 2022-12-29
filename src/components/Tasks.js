@@ -2,6 +2,8 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 
 function Tasks() {
+  const [message, setMessage] = React.useState("");
+
   return (
     <div>
       <h1>
