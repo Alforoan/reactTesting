@@ -1,11 +1,11 @@
 import React from "react";
-import { BiHomeAlt } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 function Tasks() {
   return (
     <div>
       <h1>
-        <FaBeer /> Tasks
+        <FaHome /> Tasks
       </h1>
     </div>
   );
