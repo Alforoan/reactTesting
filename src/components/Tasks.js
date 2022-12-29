@@ -1,6 +1,8 @@
 import React from "react";
 import { FaHome } from "react-icons/fa";
 
+const handleClick = () => {};
+
 function Tasks() {
   return (
     <div>
@@ -8,7 +10,7 @@ function Tasks() {
         <FaHome /> Tasks
       </h1>
       <form>
-        <input type="text" placeholder="Add a task" />
+        <input onClick={handleClick} type="text" placeholder="Add a task" />
       </form>
     </div>
   );
