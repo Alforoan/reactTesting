@@ -14,6 +14,7 @@ function Tasks() {
       </h1>
       <form>
         <input
+          className="task-form"
           onClick={() => handleClick()}
           type="text"
           placeholder={message}
