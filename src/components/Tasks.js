@@ -7,6 +7,7 @@ function Tasks() {
       <h1>
         <FaHome /> Tasks
       </h1>
+      <button className="task-btn"></button>
     </div>
   );
 }
