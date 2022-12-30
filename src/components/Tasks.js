@@ -42,13 +42,12 @@ function Tasks() {
       <div>
         <List tasks={list} />
       </div>
-      <button onClick={() => handleWarningClick()}>
-        {" "}
+      <button onClick={() => handleClick()}>
         {clear ? (
           <Warning handleWarningClick={handleWarningClick} />
         ) : (
           "clear all"
-        )}{" "}
+        )}
       </button>
     </div>
   );
