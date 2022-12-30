@@ -1,10 +1,18 @@
 import React from "react";
 
-const List = () => {
+const List = ({ tasks }) => {
   return (
-    <article>
-      <h1>stuff</h1>
-    </article>
+    <div>
+      {tasks.map((task) => {
+        const { id, title } = task;
+        return (
+          <article key={id}>
+            <p>{title}</p>
+          </article>
+        );
+      })}
+      ;
+    </div>
   );
 };
 
