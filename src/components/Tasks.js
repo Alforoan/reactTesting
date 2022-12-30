@@ -24,6 +24,11 @@ function Tasks() {
     setClear(false);
   };
 
+  const handleWarningClickTwo = () => {
+    console.log("hi");
+    setClear(false);
+  };
+
   return (
     <div>
       <h1>
@@ -43,13 +48,15 @@ function Tasks() {
       <div>
         <List tasks={list} />
       </div>
-      <button onClick={() => handleClick()}>
-        {clear ? (
-          <Warning handleWarningClick={handleWarningClick} />
-        ) : (
-          "clear all"
-        )}
-      </button>
+      <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
+      {clear ? (
+        <Warning
+          handleWarningClick={handleWarningClick}
+          handleWarningClickTwo={handleWarningClickTwo}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
