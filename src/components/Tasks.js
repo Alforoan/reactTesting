@@ -2,7 +2,7 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 
 function Tasks() {
-  const [message, setMessage] = React.useState("Add a task");
+  const [message, setMessage] = React.useState("");
   const [task, setTask] = React.useState("");
   const handleClick = () => {
     setMessage("Type something you have to do!");
@@ -19,11 +19,11 @@ function Tasks() {
       <form onSubmit={() => handleSubmit()} type="submit">
         <input
           className="task-form"
-          onClick={() => handleClick()}
+          onChange={(e) => setMessage(e.target.value)}
           type="text"
           placeholder="Add a task"
         />
-        <button type="submit"></button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
