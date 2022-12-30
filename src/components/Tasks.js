@@ -4,9 +4,6 @@ import { FaHome } from "react-icons/fa";
 function Tasks() {
   const [message, setMessage] = React.useState("");
   const [task, setTask] = React.useState("");
-  const handleClick = () => {
-    setMessage("Type something you have to do!");
-  };
 
   const handleSubmit = () => {};
 
