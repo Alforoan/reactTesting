@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHome } from "react-icons/fa";
+import List from "./List";
 
 function Tasks() {
   const [message, setMessage] = React.useState("");
@@ -28,6 +29,9 @@ function Tasks() {
         />
         <button type="submit">Submit</button>
       </form>
+      <div>
+        <List tasks={list} />
+      </div>
     </div>
   );
 }
