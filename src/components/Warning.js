@@ -1,6 +1,6 @@
 import React from "react";
 
-const Warning = ({ props }) => {
+const Warning = (props) => {
   return (
     <main>
       <div>

@@ -21,6 +21,7 @@ function Tasks() {
   const handleWarningClick = () => {
     console.log("testing");
     setList([]);
+    setClear(false);
   };
 
   return (
