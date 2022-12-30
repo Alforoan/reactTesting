@@ -11,7 +11,6 @@ const List = ({ tasks }) => {
           </article>
         );
       })}
-      ;
     </div>
   );
 };
