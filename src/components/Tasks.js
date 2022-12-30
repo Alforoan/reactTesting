@@ -6,7 +6,12 @@ function Tasks() {
   const [task, setTask] = React.useState("");
   const [list, setList] = React.useState([]);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newTask = { id: new Date().getTime().toString(), title: message };
+    setList([...list, newTask]);
+    setMessage("");
+  };
 
   return (
     <div>
