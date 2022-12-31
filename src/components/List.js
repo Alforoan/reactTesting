@@ -2,7 +2,7 @@ import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 
-const List = ({ tasks }) => {
+const List = ({ tasks, removeItem }) => {
   return (
     <div>
       {tasks.map((task) => {
@@ -10,12 +10,14 @@ const List = ({ tasks }) => {
         return (
           <article key={id}>
             <p>{title}</p>
-            <button className="edit">
-              <FaEdit className="edit-icon" />
-            </button>
-            <button className="delete">
-              <FaTrash className="delete-icon" />
-            </button>
+            <div className="btn-container">
+              <button className="edit">
+                <FaEdit className="edit-icon" />
+              </button>
+              <button className="delete" onClick={() => removeItem(id)}>
+                <FaTrash className="delete-icon" />
+              </button>
+            </div>
           </article>
         );
       })}
