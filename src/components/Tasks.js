@@ -10,6 +10,7 @@ function Tasks() {
   const [clear, setClear] = React.useState(false);
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
+  const [sortTime, setSortTime] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
