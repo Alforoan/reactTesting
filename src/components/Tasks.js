@@ -5,7 +5,7 @@ import Warning from "./Warning";
 
 function Tasks() {
   const [message, setMessage] = React.useState("");
-  const [task, setTask] = React.useState("");
+
   const [list, setList] = React.useState([]);
   const [clear, setClear] = React.useState(false);
   const [isEditing, setIsEditing] = React.useState(false);
@@ -35,6 +35,13 @@ function Tasks() {
       setMessage("");
     }
   };
+
+  const alphabeticalOrder = () => {
+    let sorted = list.sort((a, b) => a.title.localeCompare(b.title));
+    console.log(sorted);
+    return setList([...sorted]);
+  };
+
   const handleClick = () => {
     if (list.length > 0) {
       setClear(true);
@@ -65,7 +72,7 @@ function Tasks() {
       <h1>
         <FaHome /> Tasks
       </h1>
-
+      <button onClick={alphabeticalOrder}>Sort Alphabetically</button>
       <form onSubmit={handleSubmit}>
         <input
           className="task-form"
