@@ -13,7 +13,24 @@ function Tasks() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (message) {
+    if (!message) {
+      console.log("put in a value");
+    } else if (message && isEditing) {
+      setList(
+        list.map((item) => {
+          if (item.id === editID) {
+            return { ...item, title: message };
+          }
+          return message;
+        })
+      );
+      setMessage("");
+      console.log(message);
+      setEditID(null);
+      console.log(editID);
+      setIsEditing(false);
+      console.log(isEditing);
+    } else {
       const newTask = { id: new Date().getTime().toString(), title: message };
       setList([...list, newTask]);
       setMessage("");
@@ -22,8 +39,6 @@ function Tasks() {
   const handleClick = () => {
     if (list.length > 0) {
       setClear(true);
-    } else {
-      setClear(false);
     }
   };
   const handleWarningClick = () => {
