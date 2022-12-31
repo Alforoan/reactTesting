@@ -21,15 +21,14 @@ function Tasks() {
           if (task.id === editID) {
             return { ...task, title: message };
           }
-          return message;
+          return task;
         })
       );
       setMessage("");
-      console.log(message);
+
       setEditID(null);
-      console.log(editID);
+
       setIsEditing(false);
-      console.log(isEditing);
     } else {
       const newTask = { id: new Date().getTime().toString(), title: message };
       setList([...list, newTask]);
