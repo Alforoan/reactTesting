@@ -6,8 +6,8 @@ const Warning = (props) => {
       <div>
         <h3>Are you sure you want to do that?</h3>
       </div>
-      <div onClick={props.handleWarningClick}>Yes</div>
-      <div onClick={props.handleWarningClickTwo}>No</div>
+      <button onClick={props.handleWarningClick}>Yes</button>
+      <button onClick={props.handleWarningClickTwo}>No</button>
     </main>
   );
 };

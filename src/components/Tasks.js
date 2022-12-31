@@ -11,21 +11,24 @@ function Tasks() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const newTask = { id: new Date().getTime().toString(), title: message };
     setList([...list, newTask]);
     setMessage("");
   };
   const handleClick = () => {
-    setClear(true);
+    if (list.length > 0) {
+      setClear(true);
+    } else {
+      setClear(false);
+    }
   };
   const handleWarningClick = () => {
-    console.log("testing");
     setList([]);
     setClear(false);
   };
 
   const handleWarningClickTwo = () => {
-    console.log("hi");
     setClear(false);
   };
 
