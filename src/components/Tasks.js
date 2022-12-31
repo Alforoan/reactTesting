@@ -17,9 +17,9 @@ function Tasks() {
       console.log("put in a value");
     } else if (message && isEditing) {
       setList(
-        list.map((item) => {
-          if (item.id === editID) {
-            return { ...item, title: message };
+        list.map((task) => {
+          if (task.id === editID) {
+            return { ...task, title: message };
           }
           return message;
         })
