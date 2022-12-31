@@ -51,7 +51,7 @@ function Tasks() {
       <h1>
         <FaHome /> Tasks
       </h1>
-      <div>{task}</div>
+
       <form onSubmit={handleSubmit}>
         <input
           className="task-form"
@@ -60,10 +60,10 @@ function Tasks() {
           type="text"
           placeholder="Add a task"
         />
-        <button type="submit">Submit</button>
+        <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
       </form>
       <div>
-        <List tasks={list} removeTask={removeTask} />
+        <List tasks={list} removeTask={removeTask} editTask={editTask} />
       </div>
       <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
       {clear ? (
