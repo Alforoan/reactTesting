@@ -1,4 +1,6 @@
 import React from "react";
+import { FaEdit } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 const List = ({ tasks }) => {
   return (
@@ -8,6 +10,12 @@ const List = ({ tasks }) => {
         return (
           <article key={id}>
             <p>{title}</p>
+            <button className="edit">
+              <FaEdit />
+            </button>
+            <button className="delete">
+              <FaTrash />
+            </button>
           </article>
         );
       })}
