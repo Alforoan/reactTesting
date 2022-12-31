@@ -9,6 +9,7 @@ function Tasks() {
   const [list, setList] = React.useState([]);
   const [clear, setClear] = React.useState(false);
   const [isEditing, setIsEditing] = React.useState(false);
+  const [editID, setEditID] = React.useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +41,9 @@ function Tasks() {
 
   const editTask = (id) => {
     const specificTask = list.find((item) => item.id === id);
+    setIsEditing(true);
+    setEditID(id);
+    setMessage(specificTask.title);
   };
 
   return (
