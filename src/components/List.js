@@ -11,10 +11,10 @@ const List = ({ tasks }) => {
           <article key={id}>
             <p>{title}</p>
             <button className="edit">
-              <FaEdit />
+              <FaEdit className="edit-icon" />
             </button>
             <button className="delete">
-              <FaTrash />
+              <FaTrash className="delete-icon" />
             </button>
           </article>
         );
