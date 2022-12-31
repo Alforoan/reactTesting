@@ -32,7 +32,7 @@ function Tasks() {
     setClear(false);
   };
 
-  const removeItem = (id) => {
+  const removeTask = (id) => {
     setList(list.filter((task) => task.id !== id));
   };
 
@@ -53,7 +53,7 @@ function Tasks() {
         <button type="submit">Submit</button>
       </form>
       <div>
-        <List tasks={list} removeItem={removeItem} />
+        <List tasks={list} removeTask={removeTask} />
       </div>
       <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
       {clear ? (
