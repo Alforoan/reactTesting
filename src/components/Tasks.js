@@ -8,13 +8,15 @@ function Tasks() {
   const [task, setTask] = React.useState("");
   const [list, setList] = React.useState([]);
   const [clear, setClear] = React.useState(false);
+  const [isEditing, setIsEditing] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const newTask = { id: new Date().getTime().toString(), title: message };
-    setList([...list, newTask]);
-    setMessage("");
+    if (message) {
+      const newTask = { id: new Date().getTime().toString(), title: message };
+      setList([...list, newTask]);
+      setMessage("");
+    }
   };
   const handleClick = () => {
     if (list.length > 0) {
@@ -34,6 +36,10 @@ function Tasks() {
 
   const removeTask = (id) => {
     setList(list.filter((task) => task.id !== id));
+  };
+
+  const editTask = (id) => {
+    const specificTask = list.find((item) => item.id === id);
   };
 
   return (
