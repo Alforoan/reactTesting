@@ -40,7 +40,11 @@ function Tasks() {
   const alphabeticalOrder = () => {
     let sorted = list.sort((a, b) => a.title.localeCompare(b.title));
     console.log(sorted);
-    return setList([...sorted]);
+    setList([...sorted]);
+  };
+  const handleOrder = () => {
+    let sorted = list.sort((a, b) => a.id.localeCompare(b.id));
+    setList([...sorted]);
   };
 
   const handleClick = () => {
@@ -73,7 +77,8 @@ function Tasks() {
       <h1>
         <FaHome /> Tasks
       </h1>
-      <button onClick={alphabeticalOrder}>Sort Alphabetically</button>
+      <button onClick={alphabeticalOrder}>{"Sort Alphabetically"}</button>
+      <button onClick={handleOrder}>Default</button>
       <form onSubmit={handleSubmit}>
         <input
           className="task-form"
