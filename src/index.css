@@ -21,7 +21,8 @@ code {
 }
 
 .edit,
-.delete {
+.delete,
+.star {
   border: none;
   padding: 1rem 2rem;
   background-color: transparent;
