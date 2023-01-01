@@ -27,7 +27,8 @@ code {
   background-color: transparent;
 }
 .edit-icon,
-.delete-icon {
+.delete-icon,
+.star-icon {
   font-size: 2rem;
   cursor: pointer;
 }

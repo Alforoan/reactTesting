@@ -1,6 +1,6 @@
 import React from "react";
 import { FaEdit } from "react-icons/fa";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaRegStar } from "react-icons/fa";
 
 const List = ({ tasks, removeTask, editTask }) => {
   return (
@@ -16,6 +16,9 @@ const List = ({ tasks, removeTask, editTask }) => {
               </button>
               <button className="delete" onClick={() => removeTask(id)}>
                 <FaTrash className="delete-icon" />
+              </button>
+              <button className="star">
+                <FaRegStar className="star-icon" />
               </button>
             </div>
           </article>
