@@ -11,6 +11,7 @@ function Tasks() {
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
   const [sortTime, setSortTime] = React.useState(false);
+  const [isImportant, setIsImportant] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,6 +75,11 @@ function Tasks() {
     setMessage(specificTask.title);
   };
 
+  const importantTask = () => {
+    setIsImportant((prev) => !prev);
+    console.log(isImportant);
+  };
+
   return (
     <div>
       <h1>
@@ -92,7 +98,12 @@ function Tasks() {
         <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
       </form>
       <div>
-        <List tasks={list} removeTask={removeTask} editTask={editTask} />
+        <List
+          tasks={list}
+          removeTask={removeTask}
+          editTask={editTask}
+          importantTask={importantTask}
+        />
       </div>
       <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
       {clear ? (
