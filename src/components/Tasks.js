@@ -39,8 +39,10 @@ function Tasks() {
 
   const alphabeticalOrder = () => {
     let sorted = list.sort((a, b) => a.title.localeCompare(b.title));
-    console.log(sorted);
-    setList([...sorted]);
+
+    if (list.length > 1) {
+      setList([...sorted]);
+    }
   };
   const handleOrder = () => {
     let sorted = list.sort((a, b) => a.id.localeCompare(b.id));
