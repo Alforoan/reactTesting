@@ -4,10 +4,19 @@ import List from "./List";
 import Warning from "./Warning";
 import ImportantList from "./ImportantList";
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem("list");
+  if (list) {
+    return JSON.parse(localStorage.getItem("list"));
+  } else {
+    return [];
+  }
+};
+
 function Important() {
   const [message, setMessage] = React.useState("");
 
-  const [list, setList] = React.useState([]);
+  const [list, setList] = React.useState(getLocalStorage());
   const [clear, setClear] = React.useState(false);
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
@@ -35,7 +44,7 @@ function Important() {
       const newTask = {
         id: new Date().getTime().toString(),
         title: message,
-        isImportant: true,
+        isImportant: false,
         isCompleted: false,
       };
       setList([...list, newTask]);
@@ -105,6 +114,9 @@ function Important() {
     setList([...list]);
   };
 
+  React.useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
   return (
     <div>
       <h1>
