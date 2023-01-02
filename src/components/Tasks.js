@@ -94,6 +94,11 @@ function Tasks() {
   const completeTask = (id) => {
     let specificTask = list.filter((task) => task.id === id);
     setList(list.filter((task) => task.id === id));
+    if (specificTask[0].isCompleted === true) {
+      specificTask[0].isCompelted = false;
+    } else {
+      specificTask[0].isCompleted = true;
+    }
   };
 
   return (
