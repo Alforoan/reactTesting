@@ -10,7 +10,7 @@ const List = ({ tasks, removeTask, editTask, importantTask, completeTask }) => {
         return (
           <article key={id}>
             <p
-              onClick={completeTask}
+              onClick={() => completeTask(id)}
               className={isCompleted ? "title-completed" : "title"}
             >
               {title}

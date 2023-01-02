@@ -87,18 +87,21 @@ function Tasks() {
     } else {
       specificStar[0].isImportant = true;
     }
-
+    console.log(specificStar);
     setList([...list]);
   };
 
   const completeTask = (id) => {
     let specificTask = list.filter((task) => task.id === id);
+    // setList(list.filter((task) => task.id !== id));
 
     if (specificTask[0].isCompleted === true) {
       specificTask[0].isCompleted = false;
     } else {
       specificTask[0].isCompleted = true;
     }
+    console.log(specificTask[0].isCompleted);
+    setList([...list]);
   };
 
   return (
