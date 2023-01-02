@@ -105,11 +105,6 @@ function Tasks() {
     setList([...list]);
   };
 
-  const CompletedList = () => {
-    const filteredList = list.filter((task) => task.isCompleted === true);
-    console.log(filteredList);
-  };
-
   return (
     <div>
       <h1>
@@ -136,16 +131,11 @@ function Tasks() {
           completeTask={completeTask}
         />
       </div>
-      <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
-      {clear ? (
-        <Warning
-          handleWarningClick={handleWarningClick}
-          handleWarningClickTwo={handleWarningClickTwo}
-        />
-      ) : (
-        ""
-      )}
+
       <div>
+        <div>
+          <h2>{}</h2>
+        </div>
         {
           <Completed
             tasks={list}
@@ -156,6 +146,15 @@ function Tasks() {
           />
         }
       </div>
+      <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
+      {clear ? (
+        <Warning
+          handleWarningClick={handleWarningClick}
+          handleWarningClickTwo={handleWarningClickTwo}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

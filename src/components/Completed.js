@@ -14,6 +14,7 @@ function Completed({
         .filter((task) => task.isCompleted === true)
         .map((task) => {
           const { id, title, isImportant, isCompleted } = task;
+
           return (
             <article key={id}>
               <p
@@ -22,6 +23,7 @@ function Completed({
               >
                 {title}
               </p>
+
               <div className="btn-container">
                 <button className="delete" onClick={() => removeTask(id)}>
                   <FaTrash className="delete-icon" />
