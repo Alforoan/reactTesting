@@ -2,11 +2,11 @@ import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { FaTrash, FaRegStar, FaStar } from "react-icons/fa";
 
-const List = ({ tasks, removeTask, editTask, importantTask, isImportant }) => {
+const List = ({ tasks, removeTask, editTask, importantTask }) => {
   return (
     <div>
       {tasks.map((task) => {
-        const { id, title } = task;
+        const { id, title, isImportant } = task;
         return (
           <article key={id}>
             <p>{title}</p>
@@ -17,7 +17,7 @@ const List = ({ tasks, removeTask, editTask, importantTask, isImportant }) => {
               <button className="delete" onClick={() => removeTask(id)}>
                 <FaTrash className="delete-icon" />
               </button>
-              <button className="star" onClick={() => importantTask()}>
+              <button className="star" onClick={() => importantTask(id)}>
                 {isImportant ? (
                   <FaStar className="star-icon" />
                 ) : (

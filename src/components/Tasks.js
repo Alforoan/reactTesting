@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaSmile } from "react-icons/fa";
+import { FaHome, FaSmile, FaTwitterSquare } from "react-icons/fa";
 import List from "./List";
 import Warning from "./Warning";
 
@@ -11,7 +11,6 @@ function Tasks() {
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
   const [sortTime, setSortTime] = React.useState(false);
-  const [isImportant, setIsImportant] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +31,11 @@ function Tasks() {
 
       setIsEditing(false);
     } else {
-      const newTask = { id: new Date().getTime().toString(), title: message };
+      const newTask = {
+        id: new Date().getTime().toString(),
+        title: message,
+        isImportant: false,
+      };
       setList([...list, newTask]);
       setMessage("");
     }
@@ -75,9 +78,16 @@ function Tasks() {
     setMessage(specificTask.title);
   };
 
-  const importantTask = () => {
-    setIsImportant((prev) => !prev);
-    console.log(isImportant);
+  const importantTask = (id) => {
+    let specificStar = list.filter((task) => task.id === id);
+    setList(list.filter((task) => task.id !== id));
+    if (specificStar[0].isImportant === true) {
+      specificStar[0].isImportant = false;
+    } else {
+      specificStar[0].isImportant = true;
+    }
+
+    setList([...list]);
   };
 
   return (

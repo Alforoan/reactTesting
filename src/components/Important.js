@@ -2,9 +2,9 @@ import React from "react";
 
 const Important = () => {
   return (
-    <main>
+    <div>
       <h1>hello</h1>
-    </main>
+    </div>
   );
 };
 
