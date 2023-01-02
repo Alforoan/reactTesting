@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome, FaSmile, FaTwitterSquare } from "react-icons/fa";
 import List from "./List";
 import Warning from "./Warning";
+import Completed from "./Completed";
 
 function Tasks() {
   const [message, setMessage] = React.useState("");
@@ -104,6 +105,11 @@ function Tasks() {
     setList([...list]);
   };
 
+  const CompletedList = () => {
+    const filteredList = list.filter((task) => task.isCompleted === true);
+    console.log(filteredList);
+  };
+
   return (
     <div>
       <h1>
@@ -139,6 +145,17 @@ function Tasks() {
       ) : (
         ""
       )}
+      <div>
+        {
+          <Completed
+            tasks={list}
+            removeTask={removeTask}
+            editTask={editTask}
+            importantTask={importantTask}
+            completeTask={completeTask}
+          />
+        }
+      </div>
     </div>
   );
 }
