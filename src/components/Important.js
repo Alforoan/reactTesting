@@ -44,7 +44,7 @@ function Important() {
       const newTask = {
         id: new Date().getTime().toString(),
         title: message,
-        isImportant: false,
+        isImportant: true,
         isCompleted: false,
       };
       setList([...list, newTask]);
