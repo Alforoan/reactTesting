@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaHome, FaSmile, FaTwitterSquare } from "react-icons/fa";
 import List from "./List";
 import Warning from "./Warning";
 import Completed from "./Completed";
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem("list");
+  if (list) {
+    return JSON.parse(localStorage.getItem("list"));
+  } else {
+    return [];
+  }
+};
+
 function Tasks() {
   const [message, setMessage] = React.useState("");
 
-  const [list, setList] = React.useState([]);
+  const [list, setList] = React.useState(getLocalStorage());
   const [clear, setClear] = React.useState(false);
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
@@ -104,7 +113,9 @@ function Tasks() {
     console.log(specificTask[0].isCompleted);
     setList([...list]);
   };
-  console.log(Completed.title);
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
   return (
     <div>
       <h1>
