@@ -134,7 +134,7 @@ function Tasks() {
 
       <div>
         <div>
-          <h2>{}</h2>
+          <h2>{list.isComplete ? "idk" : "stuff"}</h2>
         </div>
         {
           <Completed
@@ -146,7 +146,9 @@ function Tasks() {
           />
         }
       </div>
-      <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
+      <button onClick={() => handleClick()}>
+        {list.length > 0 ? "clear all" : ""}
+      </button>
       {clear ? (
         <Warning
           handleWarningClick={handleWarningClick}
