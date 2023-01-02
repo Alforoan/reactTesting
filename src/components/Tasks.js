@@ -104,7 +104,7 @@ function Tasks() {
     console.log(specificTask[0].isCompleted);
     setList([...list]);
   };
-
+  console.log(Completed.title);
   return (
     <div>
       <h1>
@@ -134,7 +134,9 @@ function Tasks() {
 
       <div>
         <div>
-          <h2>{list.isComplete ? "idk" : "stuff"}</h2>
+          <h2>
+            {list.some(({ isCompleted }) => isCompleted) ? "Completed" : ""}
+          </h2>
         </div>
         {
           <Completed
