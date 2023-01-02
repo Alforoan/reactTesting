@@ -1,9 +1,10 @@
 import React from "react";
+import Tasks from "./Tasks";
 
 const Important = () => {
   return (
     <div>
-      <h1>hello</h1>
+      <h2>Important</h2>
     </div>
   );
 };

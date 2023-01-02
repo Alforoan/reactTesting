@@ -2,14 +2,15 @@ import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { FaTrash, FaRegStar, FaStar } from "react-icons/fa";
 
-const List = ({ tasks, removeTask, editTask, importantTask }) => {
+const List = ({ tasks, removeTask, editTask, importantTask, isCompleted }) => {
+  console.log(isCompleted);
   return (
     <div>
       {tasks.map((task) => {
         const { id, title, isImportant } = task;
         return (
           <article key={id}>
-            <p>{title}</p>
+            <p className={isCompleted ? "title-completed" : "title"}>{title}</p>
             <div className="btn-container">
               <button className="edit" onClick={() => editTask(id)}>
                 <FaEdit className="edit-icon" />

@@ -11,6 +11,7 @@ function Tasks() {
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
   const [sortTime, setSortTime] = React.useState(false);
+  const [isCompleted, setIsCompleted] = React.useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -113,6 +114,7 @@ function Tasks() {
           removeTask={removeTask}
           editTask={editTask}
           importantTask={importantTask}
+          isCompleted={isCompleted}
         />
       </div>
       <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
