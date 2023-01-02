@@ -11,7 +11,6 @@ function Tasks() {
   const [isEditing, setIsEditing] = React.useState(false);
   const [editID, setEditID] = React.useState(null);
   const [sortTime, setSortTime] = React.useState(false);
-  const [isCompleted, setIsCompleted] = React.useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +35,7 @@ function Tasks() {
         id: new Date().getTime().toString(),
         title: message,
         isImportant: false,
+        isCompleted: false,
       };
       setList([...list, newTask]);
       setMessage("");
@@ -91,6 +91,11 @@ function Tasks() {
     setList([...list]);
   };
 
+  const completeTask = (id) => {
+    let specificTask = list.filter((task) => task.id === id);
+    setList(list.filter((task) => task.id === id));
+  };
+
   return (
     <div>
       <h1>
@@ -114,7 +119,6 @@ function Tasks() {
           removeTask={removeTask}
           editTask={editTask}
           importantTask={importantTask}
-          isCompleted={isCompleted}
         />
       </div>
       <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>

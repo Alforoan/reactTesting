@@ -2,12 +2,11 @@ import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { FaTrash, FaRegStar, FaStar } from "react-icons/fa";
 
-const List = ({ tasks, removeTask, editTask, importantTask, isCompleted }) => {
-  console.log(isCompleted);
+const List = ({ tasks, removeTask, editTask, importantTask }) => {
   return (
     <div>
       {tasks.map((task) => {
-        const { id, title, isImportant } = task;
+        const { id, title, isImportant, isCompleted } = task;
         return (
           <article key={id}>
             <p className={isCompleted ? "title-completed" : "title"}>{title}</p>
