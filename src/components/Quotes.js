@@ -18,7 +18,7 @@ const Quotes = () => {
         Click me for an inspirational quote!
       </button>
       <p>
-        {quote} -{from}
+        <span className="quote">{quote}</span> -{from}
       </p>
     </article>
   );
