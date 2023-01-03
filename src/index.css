@@ -191,3 +191,8 @@ form {
   background-color: gray;
   border: 1px solid black;
 }
+
+.no-display-btn {
+  display: none;
+  visibility: hidden;
+}

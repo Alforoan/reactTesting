@@ -150,8 +150,11 @@ function Important() {
             completeTask={completeTask}
           />
         </div>
-        <button className="clear-all-btn" onClick={() => handleClick()}>
-          {clear ? "" : "clear all"}
+        <button
+          className={list.length > 0 ? "clear-all-btn" : "no-display-btn"}
+          onClick={() => handleClick()}
+        >
+          {list.length > 0 ? "clear all" : ""}
         </button>
         {clear ? (
           <Warning
