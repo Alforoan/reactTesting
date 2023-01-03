@@ -117,12 +117,16 @@ function Tasks() {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
   return (
-    <div>
-      <h1>
+    <div className="important-container">
+      <h1 className="task-text">
         <FaHome /> Tasks
       </h1>
-      <button onClick={alphabeticalOrder}>{"Sort Alphabetically"}</button>
-      <button onClick={handleOrder}>Default</button>
+      <button className="alphabetical-btn" onClick={alphabeticalOrder}>
+        {"Sort Alphabetically"}
+      </button>
+      <button className="default-btn" onClick={handleOrder}>
+        Default
+      </button>
       <form onSubmit={handleSubmit}>
         <input
           className="task-form"
@@ -131,7 +135,9 @@ function Tasks() {
           type="text"
           placeholder="Add a task"
         />
-        <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
+        <button className="submit-btn" type="submit">
+          {isEditing ? "Edit" : "Submit"}
+        </button>
       </form>
       <div>
         <List
@@ -143,7 +149,7 @@ function Tasks() {
         />
       </div>
 
-      <div>
+      <div className="task-section-container">
         <div>
           <h2>
             {list.some(({ isCompleted }) => isCompleted) ? "Completed" : ""}

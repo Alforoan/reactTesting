@@ -2,12 +2,16 @@ import React from "react";
 
 const Warning = (props) => {
   return (
-    <main>
+    <main className="warning-container">
       <div>
         <h3>Are you sure you want to do that?</h3>
       </div>
-      <button onClick={props.handleWarningClick}>Yes</button>
-      <button onClick={props.handleWarningClickTwo}>No</button>
+      <button className="warning-yes-btn" onClick={props.handleWarningClick}>
+        Yes
+      </button>
+      <button className="warning-no-btn" onClick={props.handleWarningClickTwo}>
+        No
+      </button>
     </main>
   );
 };

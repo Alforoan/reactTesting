@@ -137,7 +137,8 @@ code {
   padding: 0.2rem 0.4rem;
 }
 
-.important-text {
+.important-text,
+.task-text {
   margin-bottom: 0.5rem;
 }
 
@@ -185,6 +186,7 @@ form {
   text-transform: capitalize;
   border: 1px solid transparent;
   border-radius: 3px;
+  margin-top: 0.3rem;
 }
 .clear-all-btn:hover {
   cursor: pointer;
@@ -195,4 +197,27 @@ form {
 .no-display-btn {
   display: none;
   visibility: hidden;
+}
+
+.warning-container {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.warning-yes-btn,
+.warning-no-btn {
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.2rem;
+  margin-top: 0.3rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.warning-yes-btn:hover,
+.warning-no-btn:hover {
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.important-container {
+  margin-top: 0.2rem;
 }

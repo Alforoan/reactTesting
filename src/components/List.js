@@ -10,27 +10,29 @@ const List = ({ tasks, removeTask, editTask, importantTask, completeTask }) => {
         .map((task) => {
           const { id, title, isImportant, isCompleted } = task;
           return (
-            <article key={id}>
-              <p
-                onClick={() => completeTask(id)}
-                className={isCompleted ? "title-completed" : "title"}
-              >
-                {title}
-              </p>
-              <div className="btn-container">
-                <button className="edit" onClick={() => editTask(id)}>
-                  <FaEdit className="edit-icon" />
-                </button>
-                <button className="delete" onClick={() => removeTask(id)}>
-                  <FaTrash className="delete-icon" />
-                </button>
-                <button className="star" onClick={() => importantTask(id)}>
-                  {isImportant ? (
-                    <FaStar className="star-icon" />
-                  ) : (
-                    <FaRegStar className="star-icon" />
-                  )}
-                </button>
+            <article className="important-container" key={id}>
+              <div className="task-container">
+                <p
+                  onClick={() => completeTask(id)}
+                  className={isCompleted ? "title-completed" : "title"}
+                >
+                  {title}
+                </p>
+                <div className="btn-container">
+                  <button className="edit" onClick={() => editTask(id)}>
+                    <FaEdit className="edit-icon" />
+                  </button>
+                  <button className="delete" onClick={() => removeTask(id)}>
+                    <FaTrash className="delete-icon" />
+                  </button>
+                  <button className="star" onClick={() => importantTask(id)}>
+                    {isImportant ? (
+                      <FaStar className="star-icon" />
+                    ) : (
+                      <FaRegStar className="star-icon" />
+                    )}
+                  </button>
+                </div>
               </div>
             </article>
           );
