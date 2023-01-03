@@ -5,10 +5,11 @@ import data from "./data";
 const Quotes = () => {
   const [clicked, setClicked] = React.useState(false);
   const [quote, setQuote] = React.useState("");
-
+  const [from, setFrom] = React.useState("");
   let random = Math.floor(Math.random() * (data.length - 1));
   const handleClick = () => {
     setQuote(data[random].text);
+    setFrom(data[random].from);
   };
 
   return (
@@ -16,7 +17,9 @@ const Quotes = () => {
       <button onClick={handleClick}>
         Click me for an inspirational quote!
       </button>
-      <p>{quote}</p>
+      <p>
+        {quote} -{from}
+      </p>
     </article>
   );
 };
