@@ -165,7 +165,10 @@ function Tasks() {
           />
         }
       </div>
-      <button onClick={() => handleClick()}>
+      <button
+        className={list.length > 0 ? "clear-all-btn" : "no-display-btn"}
+        onClick={() => handleClick()}
+      >
         {list.length > 0 ? "clear all" : ""}
       </button>
       {clear ? (
