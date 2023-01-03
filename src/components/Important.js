@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaSmile, FaTwitterSquare } from "react-icons/fa";
+import { FaStar, FaSmile, FaTwitterSquare, FaMapSigns } from "react-icons/fa";
 import List from "./List";
 import Warning from "./Warning";
 import ImportantList from "./ImportantList";
@@ -118,12 +118,16 @@ function Important() {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
   return (
-    <div>
-      <h1>
+    <div className="important-container">
+      <h1 className="important-text">
         <FaStar /> Important
       </h1>
-      <button onClick={alphabeticalOrder}>{"Sort Alphabetically"}</button>
-      <button onClick={handleOrder}>Default</button>
+      <button className="alphabetical-btn" onClick={alphabeticalOrder}>
+        {"Sort Alphabetically"}
+      </button>
+      <button className="default-btn" onClick={handleOrder}>
+        Default
+      </button>
       <form onSubmit={handleSubmit}>
         <input
           className="task-form"
@@ -132,26 +136,32 @@ function Important() {
           type="text"
           placeholder="Add a task"
         />
-        <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
+        <button className="submit-btn" type="submit">
+          {isEditing ? "Edit" : "Submit"}
+        </button>
       </form>
-      <div>
-        <ImportantList
-          tasks={list}
-          removeTask={removeTask}
-          editTask={editTask}
-          importantTask={importantTask}
-          completeTask={completeTask}
-        />
-      </div>
-      <button onClick={() => handleClick()}>{clear ? "" : "clear all"}</button>
-      {clear ? (
-        <Warning
-          handleWarningClick={handleWarningClick}
-          handleWarningClickTwo={handleWarningClickTwo}
-        />
-      ) : (
-        ""
-      )}
+      <section className="task-section-container">
+        <div>
+          <ImportantList
+            tasks={list}
+            removeTask={removeTask}
+            editTask={editTask}
+            importantTask={importantTask}
+            completeTask={completeTask}
+          />
+        </div>
+        <button className="clear-all-btn" onClick={() => handleClick()}>
+          {clear ? "" : "clear all"}
+        </button>
+        {clear ? (
+          <Warning
+            handleWarningClick={handleWarningClick}
+            handleWarningClickTwo={handleWarningClickTwo}
+          />
+        ) : (
+          ""
+        )}
+      </section>
     </div>
   );
 }

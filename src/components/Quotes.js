@@ -22,7 +22,7 @@ const Quotes = () => {
         <div className="quote">
           <h4>{quote}</h4>
         </div>
-        <p> -{from}</p>
+        <p> {from}</p>
       </section>
     </article>
   );
