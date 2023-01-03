@@ -46,7 +46,8 @@ code {
   margin-bottom: 2rem;
 }
 .navbar-list > li {
-  padding-right: 4rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
   list-style: none;
 }
 .navbar-list > li > a {
@@ -131,8 +132,8 @@ code {
 }
 .important-container {
   background: lightgreen;
-  max-width: 700px;
-  margin-left: 5rem;
+  max-width: 650px;
+
   border-radius: 10px;
   padding: 0.2rem 0.4rem;
   margin: auto;
@@ -240,4 +241,203 @@ form {
 }
 .first-text {
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+  .navbar-list > li > a {
+    font-size: 1.5rem;
+  }
+  .quotes-button {
+    font-size: 1rem;
+  }
+
+  .quote-author-container {
+    background: white;
+    max-width: 700px;
+  }
+  .quote {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    max-width: 700px;
+  }
+
+  .title-completed,
+  .title {
+    font-size: 1rem;
+
+    width: 270px;
+  }
+
+  .task-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex;
+    margin-top: -7rem;
+  }
+  .important-container {
+    max-width: 580px;
+  }
+
+  .important-text,
+  .task-text {
+    margin-bottom: 0.3rem;
+    font-size: 1.7rem;
+  }
+
+  form {
+    margin-bottom: 0.3rem;
+  }
+
+  .task-form {
+    margin-bottom: 7rem;
+    max-width: 450px;
+    height: 35px;
+  }
+
+  .submit-btn {
+    width: 70px;
+    height: 35px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+  }
+  .submit-btn:hover {
+    background-color: gray;
+    border: 1px solid black;
+  }
+
+  .clear-all-btn {
+    padding: 0.2rem 0.5rem;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+  }
+
+  .welcome-text {
+    font-size: 2.5rem;
+  }
+
+  .home-section-container {
+    max-width: 580px;
+  }
+  .home-section-container > h4 {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .first-text {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-list > li > a {
+    font-size: 1rem;
+  }
+  .navbar-list > li {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .quotes-button {
+    font-size: 1rem;
+  }
+
+  .quote-author-container {
+    background: white;
+    max-width: 580px;
+  }
+  .quote {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    max-width: 620px;
+  }
+  .from {
+    font-size: 0.8rem;
+  }
+
+  .title-completed,
+  .title {
+    font-size: 0.7rem;
+
+    width: 270px;
+  }
+
+  .important-container {
+    max-width: 500px;
+  }
+
+  .important-text,
+  .task-text {
+    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+  }
+
+  .task-form {
+    margin-bottom: 7rem;
+    max-width: 270px;
+    height: 28px;
+  }
+
+  .submit-btn {
+    width: 60px;
+    height: 28px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .submit-btn:hover {
+    background-color: gray;
+    border: 1px solid black;
+  }
+
+  .task-container > p {
+    max-width: 200px;
+    height: 20px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .clear-all-btn {
+    padding: 0.2rem 0.5rem;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+  }
+
+  .welcome-text {
+    font-size: 2rem;
+  }
+
+  .home-section-container {
+    max-width: 500px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .home-section-container > h4 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: justify;
+  }
+  .first-text {
+    margin-top: 1rem;
+  }
+  .edit-icon,
+  .delete-icon,
+  .star-icon {
+    font-size: 0.7rem;
+    padding-left: 0.1rem;
+    cursor: pointer;
+  }
+
+  .warning-text {
+    font-size: 0.8rem;
+  }
+  .warning-yes-btn,
+  .warning-no-btn {
+    font-size: 0.6rem;
+  }
+  .form-container {
+    display: flex;
+    justify-content: flex-start;
+  }
 }

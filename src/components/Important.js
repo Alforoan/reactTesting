@@ -128,7 +128,7 @@ function Important() {
       <button className="default-btn" onClick={handleOrder}>
         Default
       </button>
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <input
           className="task-form"
           onChange={(e) => setMessage(e.target.value)}

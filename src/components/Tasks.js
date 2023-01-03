@@ -127,7 +127,7 @@ function Tasks() {
       <button className="default-btn" onClick={handleOrder}>
         Default
       </button>
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <input
           className="task-form"
           onChange={(e) => setMessage(e.target.value)}
@@ -139,17 +139,17 @@ function Tasks() {
           {isEditing ? "Edit" : "Submit"}
         </button>
       </form>
-      <div>
-        <List
-          tasks={list}
-          removeTask={removeTask}
-          editTask={editTask}
-          importantTask={importantTask}
-          completeTask={completeTask}
-        />
-      </div>
+      <section className="task-section-container">
+        <div>
+          <List
+            tasks={list}
+            removeTask={removeTask}
+            editTask={editTask}
+            importantTask={importantTask}
+            completeTask={completeTask}
+          />
+        </div>
 
-      <div className="task-section-container">
         <div>
           <h2>
             {list.some(({ isCompleted }) => isCompleted) ? "Completed" : ""}
@@ -164,21 +164,22 @@ function Tasks() {
             completeTask={completeTask}
           />
         }
-      </div>
-      <button
-        className={list.length > 0 ? "clear-all-btn" : "no-display-btn"}
-        onClick={() => handleClick()}
-      >
-        {list.length > 0 ? "clear all" : ""}
-      </button>
-      {clear ? (
-        <Warning
-          handleWarningClick={handleWarningClick}
-          handleWarningClickTwo={handleWarningClickTwo}
-        />
-      ) : (
-        ""
-      )}
+
+        <button
+          className={list.length > 0 ? "clear-all-btn" : "no-display-btn"}
+          onClick={() => handleClick()}
+        >
+          {list.length > 0 ? "clear all" : ""}
+        </button>
+        {clear ? (
+          <Warning
+            handleWarningClick={handleWarningClick}
+            handleWarningClickTwo={handleWarningClickTwo}
+          />
+        ) : (
+          ""
+        )}
+      </section>
     </div>
   );
 }
