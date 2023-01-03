@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaSmile, FaTwitterSquare } from "react-icons/fa";
+import { FaStar, FaSmile, FaTwitterSquare } from "react-icons/fa";
 import List from "./List";
 import Warning from "./Warning";
 import ImportantList from "./ImportantList";
@@ -120,7 +120,7 @@ function Important() {
   return (
     <div>
       <h1>
-        <FaHome /> Important
+        <FaStar /> Important
       </h1>
       <button onClick={alphabeticalOrder}>{"Sort Alphabetically"}</button>
       <button onClick={handleOrder}>Default</button>
