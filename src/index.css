@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  background-image: url("./images/natureBG.jpg");
 }
 
 code {
@@ -36,4 +37,61 @@ code {
 
 .title-completed {
   text-decoration: line-through;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.navbar-list > li {
+  padding-right: 4rem;
+  list-style: none;
+}
+.navbar-list > li > a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.home,
+.quotes,
+.important,
+.to-do {
+  color: black;
+  padding: 0.2rem 0.5rem;
+  background-color: transparent;
+}
+
+.home:hover,
+.quotes:hover,
+.important:hover,
+.to-do:hover {
+  background-color: rgb(29 161 242);
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 0.2rem 0.5rem;
+  color: white;
+}
+
+.quotes-button {
+  border: 1px solid transparent;
+  background-color: rgb(29 161 242);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.quote-author-container {
+  margin-left: 5rem;
+}
+.quote {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  max-width: 800px;
+  text-align: justify;
 }

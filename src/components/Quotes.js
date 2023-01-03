@@ -14,12 +14,16 @@ const Quotes = () => {
 
   return (
     <article>
-      <button onClick={handleClick}>
+      <button className="quotes-button" onClick={handleClick}>
         Click me for an inspirational quote!
       </button>
-      <p>
-        <span className="quote">{quote}</span> -{from}
-      </p>
+
+      <section className="quote-author-container">
+        <div className="quote">
+          <h4>{quote}</h4>
+        </div>
+        <p> -{from}</p>
+      </section>
     </article>
   );
 };

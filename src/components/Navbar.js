@@ -1,19 +1,27 @@
 const Navbar = () => {
   return (
-    <section>
-      <nav>
-        <ul>
+    <section className="navbar-container">
+      <nav className="navbar">
+        <ul className="navbar-list">
           <li>
-            <a href="/">Home</a>
+            <a className="home" href="/">
+              Home
+            </a>
           </li>
           <li>
-            <a href="/quotes">Quotes</a>
+            <a className="quotes" href="/quotes">
+              Quotes
+            </a>
           </li>
           <li>
-            <a href="/important">Important</a>
+            <a className="important" href="/important">
+              Important
+            </a>
           </li>
           <li>
-            <a href="/tasks">To-Do</a>
+            <a className="to-do" href="/tasks">
+              To-Do
+            </a>
           </li>
         </ul>
       </nav>

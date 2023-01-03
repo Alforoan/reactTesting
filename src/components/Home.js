@@ -1,3 +1,5 @@
+import nature from "../images/natureBG.jpg";
+
 const Home = () => {
   return (
     <div>
